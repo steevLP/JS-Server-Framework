@@ -36,37 +36,9 @@ wss.on('connection', (ws) => {
             let payload = JSON.parse(data);
             //console.log('WSS: ' + payload['event']);
             let events = [ 
-                {name:'login', function() {ws_login(payload, db_con, ws, crypt)}}, 
-                {name:'logout', function() {ws_logout(payload, db_con, ws)}}, 
+                {name:'event', function() {console.log('executes this event')}}, 
             ]; 
             listener(events,payload.event);
-            /**
-            * logout:
-                * Removes Session Key
-                * and sends packet to redirect from the user area
-                * ends connection
-            * register:
-                * User Folder Structure: 
-                *  Usersroot(named like the user) I--> space (where files get stored) 
-                *                                 I--> meta (Where user infos get stored) 
-                * Ends Connection
-            * Database Oriented Data Management
-            * getData
-                * Sends Requested data
-                * 
-                * Ends Connection
-            * writeData
-                * Wrights Data to the Database
-                * Check if user id is given
-                * Ends Connection
-            * Physical Data management
-                * updload
-                * Takes Uploaded Data and places it in the Users Space
-                * Ends Connection
-            * download
-                * Serves Requested Files from the Users Space
-                * Ends Connection
-            */
         }
     });
 });
