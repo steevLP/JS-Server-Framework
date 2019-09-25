@@ -1,0 +1,5 @@
+{
+    "maintance":"true",
+    "websocket": "8080",
+    "tcpserver":"1337"
+}
