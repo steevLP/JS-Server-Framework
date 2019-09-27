@@ -36,7 +36,7 @@ As Default they are stored in *bin/classes/events*
 
 and a normal Event is build like this:
 ```js
-event_funcition(){
+event_function(){
   Console.log('Your code here please');
 }
 ```
