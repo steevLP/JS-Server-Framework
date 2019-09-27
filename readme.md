@@ -23,18 +23,18 @@ and this can go on for ever but, this should show the point of a packet
 
 
 ## Events
-Something need to happen with your packet and the Event Handler is handling it
-The Handler is taking in a **Event Name** and a **Function** for it
+Something needs to happen with your packet! The Event Handler is handling it.
+The Handler is taking in a **Event Name** and a **Function** for it.
 
-so it should look like this:
+So it should look like this:
 ```                
 {name:'logout', function() {eventFunction(possible,arguments)}}, 
 ```
 
-but somewhere your event need to be defined
-as default they are stored in *bin/classes/events*
+But somewhere your event need to be defined!
+As Default they are stored in *bin/classes/events*
 
-and a normal event is build like this
+and a normal Event is build like this:
 ```js
 event_funcition(){
   Console.log('Your code here please');
