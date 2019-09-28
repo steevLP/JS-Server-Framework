@@ -16,7 +16,7 @@ A Normal Packet would look like this
 ```
 But you can parse even more Objects inside the Packet
 ```json
-{"event":"name", "payload":{"arg1":"arg_value_1","arg2":"arg_value_2","arg3":"arg_value_3"}});
+{"event":"name", "payload":{"arg1":"arg_value_1","arg2":"arg_value_2","arg3":"arg_value_3"}};
 
 ```
 and this can go on for ever but, this should show the point of a packet
