@@ -12,12 +12,7 @@ let wss = socket(WebSocket, config);				// Asignes Websocket
 //Classes
 let crypt = require('./bin/classes/decrypt');               // Cryption Class                     
 let IsJsonString = require('./bin/classes/IsJsonString');   // JSON Validator
-let listener = require('./bin/classes/events/listener');    // Event Listener
-
-// Events
-let tcp_login = require('./bin/classes/events/tcp/login');      // TCP Login Event
-let ws_login = require('./bin/classes/events/ws/login');        // WSS Login Event
-let ws_logout = require('./bin/classes/events/ws/logout');      // WSS Logout Event
+let listener = require('./bin/classes/listener');    // Event Listener
 
 // Database Definition
 var db_con = sql.createConnection({
@@ -36,9 +31,37 @@ wss.on('connection', (ws) => {
             let payload = JSON.parse(data);
             //console.log('WSS: ' + payload['event']);
             let events = [ 
-                {name:'event', function() {console.log('executes this event')}}, 
+                {name:'login', function() {ws_login(payload, db_con, ws, crypt)}}, 
+                {name:'logout', function() {ws_logout(payload, db_con, ws)}}, 
             ]; 
             listener(events,payload.event);
+            /**
+            * logout:
+                * Removes Session Key
+                * and sends packet to redirect from the user area
+                * ends connection
+            * register:
+                * User Folder Structure: 
+                *  Usersroot(named like the user) I--> space (where files get stored) 
+                *                                 I--> meta (Where user infos get stored) 
+                * Ends Connection
+            * Database Oriented Data Management
+            * getData
+                * Sends Requested data
+                * 
+                * Ends Connection
+            * writeData
+                * Wrights Data to the Database
+                * Check if user id is given
+                * Ends Connection
+            * Physical Data management
+                * updload
+                * Takes Uploaded Data and places it in the Users Space
+                * Ends Connection
+            * download
+                * Serves Requested Files from the Users Space
+                * Ends Connection
+            */
         }
     });
 });
