@@ -26,7 +26,7 @@ and this can go on for ever but, this should show the point of a packet
 Something needs to happen with your packet! The Event Handler is handling it.
 The Handler is taking in a **Event Name** and a **Function** for it.
 
-So it should look like this:
+Events look like this:
 ```                
 {name:'logout', function() {eventFunction(possible,arguments)}}, 
 ```
@@ -40,5 +40,5 @@ event_function(){
   Console.log('Your code here please');
 }
 ```
-Not realy difficult right?
+Not really difficult right?
 well then good luck and happy coding with it :D
