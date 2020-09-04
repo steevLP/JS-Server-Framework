@@ -3,7 +3,7 @@ Simply dealing with as the description says "nearly" all kind of software which 
 Since it also handles web socket request it can be used as real coss side server
 
 # Documentation
-You do not realy need much to get your Server Running!
+You do not really need much to get your Server Running!
 Basicly all you need, is the Packet Structur and the the know how, how to create events.
 
 ## Packets
