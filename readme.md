@@ -1,10 +1,10 @@
 # What does this Framework aim?
-Simply dealing with as the description says "nearly" all kind of software which means it deals with a few much used socket protocols
-Since it also handles web socket request it can be used as real coss side server
+Simply dealing with as the description says "nearly" all kinds of software which means it deals with a few much used socket protocols
+Since it also handles web socket requests it can be used as a real cross-side server
 
 # Documentation
-You do not really need much to get your Server Running!
-Basicly all you need, is the Packet Structur and the the know how, how to create events.
+You do not need much to get your Server Running!  
+All you need is the Packet Structure and the know-how of how to create events.
 
 ## Packets
 That's easy, look!
@@ -24,15 +24,15 @@ and this can go on for ever but, this should show the point of a packet
 
 ## Events
 Something needs to happen with your packet! The Event Handler is handling it.
-The Handler is taking in a **Event Name** and a **Function** for it.
+The Handler is taking in an **Event Name** and a **Function** for it.
 
 Events look like this:
 ```                
 {name:'logout', function() {eventFunction(possible,arguments)}}, 
 ```
 
-But somewhere your event need to be defined!
-As Default they are stored in *bin/classes/events*
+But somewhere your event needs to be defined!
+As default they are stored in *bin/classes/events*
 
 and a normal Event is build like this:
 ```js
@@ -40,5 +40,5 @@ event_function(){
   Console.log('Your code here please');
 }
 ```
-Not really difficult right?
-well then good luck and happy coding with it :D
+Not difficult right?
+well, then good luck and happy coding :D
